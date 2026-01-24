@@ -1,0 +1,19 @@
+[package]
+name = "ihm-sql"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "ihm-sql"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = "z"
+lto = true
+strip = true
+codegen-units = 1
+panic = "abort"
+
+[dependencies]
+calamine = "0.31.0"
+clap = { version = "4.5.48", features = ["derive"] }
